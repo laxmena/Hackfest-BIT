@@ -18,11 +18,12 @@ def home(request):
 
 def calculateTax(request):
 	listSize = 5
-	data = request.POST
+	data = request.GET
 	tax = GSTServices.objects.get(item = data['service']).tax
 	items = [i for i in range(listSize)]
 	userData = []
 	sumCost = 0
+	company = data['company']
 	for i in range(listSize):
 		tempData = {}
 		tempData['itemName'] = data['itemName'+str(i)]
@@ -36,7 +37,8 @@ def calculateTax(request):
 	taxAmount = float(sumCost*tax)/100.0
 	totalAmount = sumCost + taxAmount 
 
-	context = {'data': userData, 
+	context = {'company':company,
+			   'data': userData, 
 			   'itemCount': items,
 			   'result' : str(tax),
 			   'Sum': sumCost,

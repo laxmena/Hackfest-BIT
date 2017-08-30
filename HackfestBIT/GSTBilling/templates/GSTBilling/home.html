@@ -14,14 +14,15 @@
 </style>
 <div class="container">
 {% if data %}
-<form action="{% url 'GSTCompute' %}" method="POST">
+<form action="{% url 'GSTCompute' %}" method="GET">
 	{% csrf_token %}
 	<p class="flow-text">Select your Kind of Business:</p> 
 	<select name="service" class='dropdown-button btn' >
 		{% for each in data%}
-		<option value="{{each.item}}">{{each.item}}></option></li>
+		<option value="{{each.item}}">{{each.item}}</option></li>
 		{% endfor %}
 	</select>
+	Company Name: <input name="company" />
 	<table class="responsive-table"">
 
 		{% for i in itemCount %}

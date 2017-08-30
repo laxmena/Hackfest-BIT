@@ -1,4 +1,4 @@
-
+<!-- 
 <link rel = "stylesheet"
          href = "https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel = "stylesheet"
@@ -31,4 +31,53 @@ Total amount = {{Total}}<br>
 t {{t}}
 {{Temp}}
 {% endif %}
+</div> -->
+
+<link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>          
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+<style type="text/css">
+/*    body{
+        text-align: center;
+    }*/
+    span{
+        font-weight: bold;
+    }
+</style>
+<div class="col s1 card-panel teal lighten-2 flow-text" style="text-align:center">
+    <head>
+        Your Bill<br>
+        <h3>{{company}}</h3>
+    </head>
+</div>
+<div class="row">
+<body class="blue-grey lighten-5">
+        <div class="fluid-text container col s6 push-s3 white">
+        <span class="">{% if data %}</span>
+            <table class="">
+                    {% for each in data %}
+                    <tr class="flow-text"> 
+                        <td>{{each.itemName}}</td>
+                        <td>{{each.qty}}</td>
+                        <td>{{each.price}}</td>
+                    </tr>
+                    {% endfor %}
+            </table>
+            <div class="flow-text">
+            <span class="">Sum = </span>{{Sum}}<br>
+            <span>Tax = </span>{{Tax}}<br>
+            <span>Total amount = </span>{{Total}}<br>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+<div class="col s1 card-panel teal page-footer flow-text" style="text-align:center">
+    <footer>copyright</footer>
 </div>

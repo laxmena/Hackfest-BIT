@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'GSTBilling.apps.GstbillingConfig',
     'WeatherAPI.apps.WeatherapiConfig',
+    'PyCRUD.apps.PycrudConfig'
 ]
 
 MIDDLEWARE = [

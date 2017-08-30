@@ -1,0 +1,47 @@
+
+<link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+<!-- {# <p>City: city
+<p>description: {{description}}</p>
+<p>main: {{main}}</p>
+<p>pressure: {{pressure}}</p>
+<p>humidity: {{humidity}}</p>
+<p>temp: {{temp}}</p>
+<p>temp_max: {{temp_max}}</p>
+<p>temp_min: {{temp_min}}</p>
+
+ #} -->
+ <div class="row">
+ <div class="container">
+<div class="col s2 m7">
+<h2 class="header">Weather at {{city}}</h2>
+<div class="card horizontal">
+<!--   <div class="card-image">
+    <img src="https://lorempixel.com/100/190/nature/6">
+  </div> -->
+  <div class="card-stacked">
+    <div class="card-content">
+	    <p><strong>City:</strong> {{city}}
+		<p><strong>description:</strong> {{description}}</p>
+		<p><strong>main:</strong> {{main}}</p>
+		<p><strong>pressure:</strong> {{pressure}}</p>
+		<p><strong>humidity:</strong> {{humidity}}</p>
+		<p><strong>temp:</strong> {{temp}}</p>
+		<p><strong>temp_max:</strong> {{temp_max}}</p>
+		<p><strong>temp_min:</strong> {{temp_min}}</p>
+    </div>
+    <div class="card-action">
+      <a href="#">Visit Again</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
