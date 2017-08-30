@@ -1,0 +1,50 @@
+<link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+<style type="text/css">
+	body{
+		text-align: center;
+	}
+</style>
+<div class="container">
+{% if data %}
+<form action="{% url 'GSTCompute' %}" method="POST">
+	{% csrf_token %}
+	<p class="flow-text">Select your Kind of Business:</p> 
+	<select name="service" class='dropdown-button btn' >
+		{% for each in data%}
+		<option value="{{each.item}}">{{each.item}}></option></li>
+		{% endfor %}
+	</select>
+	<table class="responsive-table"">
+
+		{% for i in itemCount %}
+		<tr>
+			<td class="col s2">{{i}}</td>
+			<td class="col s5">
+				<input type="text" name="itemName{{i}}" placeholder="item {{i}}">
+			</td>
+			<td class="col s2">
+				<input type="number" name="qty{{i}}" placeholder="Quantity {{i}}">
+			</td>
+			<td class="col s3">
+				<input type="number" name="price{{i}}" placeholder="Price {{i}}">
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    	<i class="material-icons right">send</i>
+  	</button>
+</form>
+{% endif %}
+{% if result %}
+{{result}}
+{% endif %}
+</div>
