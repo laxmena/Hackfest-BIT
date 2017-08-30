@@ -1,0 +1,38 @@
+<link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>          
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+<style>
+    .foot{
+        text-align: right;
+        position:absolute;
+           bottom:0;
+           width:100%;
+    }
+</style>
+<div class="col s1 card-panel red accent-1 flow-text">
+    <head>
+        <h3 style="color:white">Weather App</h3>
+    </head>
+</div>
+
+<div class="container  col s6 push-s3 pull-s3">     
+
+<form action="{% url 'getweather' %}" class="flow-text">
+	<br></br>
+	Enter City Name: 
+	<input name="city">
+	<button class="btn waves-effect waves-light red accent-1" type="submit" name="action">Submit
+    	<i class="material-icons right">send</i>
+  	</button>
+</form>
+</div>
+
+<div class="col s1 card-panel red accent-1 page-footer flow-text foot" style="text-align:center">
+    <footer>copyright © Team Fault in Our Code</footer>
+</div>

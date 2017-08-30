@@ -12,7 +12,14 @@
 		text-align: center;
 	}
 </style>
-<div class="container">
+
+<div class="col s1 card-panel flow-text">
+    <head>
+        <h3>GST Billing App</h3>
+    </head>
+</div>
+
+<div class="container flow-text">
 {% if data %}
 <form action="{% url 'GSTCompute' %}" method="GET">
 	{% csrf_token %}
@@ -21,8 +28,9 @@
 		{% for each in data%}
 		<option value="{{each.item}}">{{each.item}}</option></li>
 		{% endfor %}
-	</select>
+	</select><br><br/>
 	Company Name: <input name="company" />
+	<br>
 	<table class="responsive-table"">
 
 		{% for i in itemCount %}

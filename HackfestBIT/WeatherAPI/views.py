@@ -7,6 +7,9 @@ import json
 import requests
 import ast
 
+def home(request):
+	return render(request, 'WeatherAPI/home.html')
+	
 # Create your views here.
 def weather(request):
 	city = request.GET['city']
