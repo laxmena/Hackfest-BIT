@@ -6,10 +6,9 @@ from django.http import HttpResponse
 
 from models import GSTServices
 
-servicesList = GSTServices.objects.all()
-
 # Create your views here.
 def home(request):
+	servicesList = GSTServices.objects.all()
 	items = [i for i in range(5)]
 	context = {'data': servicesList, 
 			   'itemCount': items}
